@@ -52,8 +52,8 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
  // const mongoose = require('mongoose');
  // mongoose.connect("mongodb://localhost/expense")
- require('./server/Models/Users');
- require('./server/Models/Income');
+ // require('./server/Models/Users');
+ // require('./server/Models/Income');
 //
 // const userRouter = require('./server/routes/users');
 // const incomeRouter = require('./server/routes/income');
