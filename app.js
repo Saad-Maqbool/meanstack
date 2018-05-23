@@ -50,13 +50,13 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-  const mongoose = require('mongoose');
- mongoose.connect("mongodb://localhost/expense")
- require('./server/Models/Users');
- require('./server/Models/Income');
-
-const userRouter = require('./server/routes/users');
-const incomeRouter = require('./server/routes/income');
+//   const mongoose = require('mongoose');
+//  mongoose.connect("mongodb://localhost/expense")
+//  require('./server/Models/Users');
+//  require('./server/Models/Income');
+//
+// const userRouter = require('./server/routes/users');
+// const incomeRouter = require('./server/routes/income');
 
 const app = express();
 
@@ -67,8 +67,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'dist/mean-app')));
 
-app.use('/users', userRouter);
-app.use('/income', incomeRouter);
+// app.use('/users', userRouter);
+// app.use('/income', incomeRouter);
 app.use(logger('dev'));
 app.use(session({
    secret: 'Super duper secret'
