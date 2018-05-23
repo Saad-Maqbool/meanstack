@@ -50,8 +50,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-   const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URL);
+
 //  mongoose.connect("mongodb://localhost/expense")
  require('./server/Models/Users');
  require('./server/Models/Income');
@@ -61,11 +62,6 @@ const userRouter = require('./server/routes/users');
 
 const app = express();
 
-if(process.env.NODE_ENV=='development') {
-  mongoose.connect(process.env.localurl);
-} else {
-  mongoose.connect(process.env.deployedurl);
-}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
