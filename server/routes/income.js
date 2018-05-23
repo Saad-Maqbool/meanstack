@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const Income = mongoose.model('Income');
-const incomeController = require('../Controllers/income.controller');
+const incomeController = require('../controllers/income.controller');
 const config = require('../../config');
 
 router.use('/', function (req, res, next) {

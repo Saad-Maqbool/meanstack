@@ -6,8 +6,8 @@
 // const logger = require('morgan');
 // const mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost/expense")
-// require('./server/Models/Users');
-// require('./server/Models/Income');
+// require('./server/models/Users');
+// require('./server/models/Income');
 // const usersRouter = require('./server/routes/users');
 // const incomeRouter = require('./server/routes/income');
 //
@@ -54,8 +54,8 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URL);
 
 //  mongoose.connect("mongodb://localhost/expense")
- require('./server/Models/Users');
- require('./server/Models/Income');
+ require('./server/models/Users');
+ require('./server/models/Income');
 //
 const userRouter = require('./server/routes/users');
  const incomeRouter = require('./server/routes/income');
