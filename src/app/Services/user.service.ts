@@ -19,7 +19,7 @@ export class UserService {
       headers: new HttpHeaders(headerDict),
     };
 
-    return this.http.post('http://localhost:3000/users/register', user, requestOptions);
+    return this.http.post('/users/register', user, requestOptions);
   }
   signin(user) {
     const headerDict = {
@@ -32,7 +32,7 @@ export class UserService {
       headers: new HttpHeaders(headerDict),
     };
 
-    const req = this.http.post('http://localhost:3000/users/login', user, requestOptions)
+    const req = this.http.post('/users/login', user, requestOptions)
       .subscribe(
         res => {
           console.log(res);

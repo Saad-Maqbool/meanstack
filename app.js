@@ -51,6 +51,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+console.log(process.env.MONGODB_URL);
 mongoose.connect(process.env.MONGODB_URL);
 
 //  mongoose.connect("mongodb://localhost/expense")
@@ -80,7 +81,7 @@ app.get('*', (req, res) => {
 });
 
 
-const port = process.env.PORT || '4000';
+const port = process.env.PORT || '5000';
 app.set('port', port);
 
 /**
