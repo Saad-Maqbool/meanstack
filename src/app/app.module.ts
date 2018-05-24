@@ -28,9 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
       },
       {path: 'register',
         component:  RegisterComponent
-      },
-      {path: '**', component: HomeComponent}
-    ])
+      }
+      ])
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
