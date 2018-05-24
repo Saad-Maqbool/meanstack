@@ -8,6 +8,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 console.log(process.env.MONGODB_URL);
 mongoose.connect(process.env.MONGODB_URL);
+//mongoose.connect('mongodb://localhost/expense');
 require('./server/models/Users');
 require('./server/models/Income');
 const userRouter = require('./server/routes/users');
@@ -33,7 +34,7 @@ app.get('*', (req, res) => {
 });
 
 
-const port = process.env.PORT || '5000';
+const port = process.env.PORT || '5200';
 app.set('port', port);
 
 const server = http.createServer(app);

@@ -9,29 +9,37 @@ import {UserService} from './Services/user.service';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { IncomeComponent } from './income/income.component';
+import {IncomeService} from './Services/income.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    IncomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'home', component: HomeComponent},
       {path: 'login',
         component:  LoginComponent
+      },
+      {path: 'home',
+        component:  HomeComponent
+      },
+      {path: 'income',
+        component:  IncomeComponent
       },
       {path: 'register',
         component:  RegisterComponent
       }
       ])
   ],
-  providers: [UserService],
+  providers: [UserService, IncomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

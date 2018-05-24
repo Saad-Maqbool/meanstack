@@ -12,12 +12,22 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
-  constructor(private controllerService: UserService) {
+  constructor(private controllerService: UserService, private router: Router) {
   }
 
   ngOnInit() {
   }
   signin() {
-    this.controllerService.signin(this.user);
+    this.controllerService.signin(this.user).subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('token', res['token']);
+         localStorage.setItem('userId', res['userId']);
+        this.goback();
+      }
+    );
+  }
+  goback() {
+    this.router.navigate(['/income']);
   }
 }
