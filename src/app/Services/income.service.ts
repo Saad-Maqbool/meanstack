@@ -7,9 +7,15 @@ import {Token} from '@angular/compiler';
 })
 export class IncomeService {
 
-  constructor(private http: HttpClient) { }
-    create(user) {
+  constructor(private http: HttpClient) {
+  }
+
+  create(user) {
     console.log(localStorage.getItem('token'))
-      return this.http.post('/income?token=' + localStorage.getItem('token'), user);
-    }
+    return this.http.post('/income/?token=' + localStorage.getItem('token'), user);
+  }
+
+  getall() {
+    return this.http.get('/income/' + localStorage.getItem('userId') + '?token=' + localStorage.getItem('token'));
+  }
 }

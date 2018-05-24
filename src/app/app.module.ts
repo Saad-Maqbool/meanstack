@@ -11,6 +11,10 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { IncomeComponent } from './income/income.component';
 import {IncomeService} from './Services/income.service';
+import { MatTableModule } from '@angular/material';
+import { ReportComponent } from './income/report/report.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,15 @@ import {IncomeService} from './Services/income.service';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    IncomeComponent
+    IncomeComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
     RouterModule.forRoot([
       {path: 'login',
         component:  LoginComponent
