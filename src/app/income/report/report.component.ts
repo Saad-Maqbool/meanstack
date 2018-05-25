@@ -7,23 +7,21 @@ import {IncomeService} from '../../Services/income.service';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-   Income = {
-  category: 'string',
-  amount: 'string',
-  date: 'string',
-  comment: 'string'
-};
 
-displayedColumns = ['category', 'amount', 'date', 'comment'];
+
+
   constructor(private controllerService: IncomeService) { }
-
+  incomes ;
   ngOnInit() {
+this.getall();
   }
-getall() {
-  this.controllerService.getall().subscribe(
-    res => {
 
-    }
-  );
-}
+  getall() {
+    this.controllerService.getall().subscribe(
+      res => {
+        console.log(res);
+        this.incomes = res;
+      }
+    );
+  }
 }

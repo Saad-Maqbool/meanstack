@@ -14,7 +14,7 @@ export class IncomeComponent implements OnInit {
     date: '',
     amount: '',
     comment: '',
-    userid: localStorage.getItem('userId')
+    user_id: localStorage.getItem('user_id')
   };
   constructor(private controllerService: IncomeService, private router: Router) { }
 

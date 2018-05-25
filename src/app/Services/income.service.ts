@@ -11,7 +11,6 @@ export class IncomeService {
   }
 
   create(user) {
-    console.log(localStorage.getItem('token'))
     return this.http.post('/income/?token=' + localStorage.getItem('token'), user);
   }
 

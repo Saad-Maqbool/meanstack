@@ -1,3 +1,6 @@
+<div>
+  <h2>Income</h2>
+
 <form (ngSubmit)="create()" #userform="ngForm">
   <label class="checkbox-inline">
     <label for="category">category:</label>
@@ -24,8 +27,9 @@
            #email="ngModel">
   </label>
 
-  <div class="form-group">
-  </div>
+  <label class="checkbox-inline">
 <button type="creste" class="btn btn-success"[disabled]="!userform.form.valid">Create</button>
+  </label>
 </form>
+</div>
 <app-report></app-report>

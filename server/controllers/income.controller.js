@@ -6,13 +6,12 @@ const User = mongoose.model('User');
 
 
 function getall(req, res, userid) {
-  console.log(userid);
+
   Income.find({'userId': userid}).populate('userId').then((income) => {
 
     if (!income.length) {
-      return res.status(404).send('No user found.');
+      return res.status(404).send("no user found");
     }
-    console.log(income[0].userId.username);
     res.status(200).send(income);
 
 
