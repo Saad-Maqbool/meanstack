@@ -1,35 +1,35 @@
 <div>
-  <h2>Income</h2>
+  <h2>Expense</h2>
 
   <form (ngSubmit)="create()" #userform="ngForm">
     <label class="checkbox-inline">
       <label for="category">category:</label>
       <input type="email" class="form-control" id="category"
-             [(ngModel)]="income.category" name="category"
+             [(ngModel)]="expense.category" name="category"
              #email="ngModel">
     </label>
     <label class="checkbox-inline">
       <label for="date">date:</label>
       <input type="date" class="form-control" id="date"
-             [(ngModel)]="income.date" name="date"
+             [(ngModel)]="expense.date" name="date"
              #email="ngModel">
     </label>
     <label class="checkbox-inline">
       <label for="amount">amount:</label>
       <input type="amount" class="form-control" id="amount"
-             [(ngModel)]="income.amount" name="amount"
+             [(ngModel)]="expense.amount" name="amount"
              #email="ngModel">
     </label>
     <label class="checkbox-inline">
       <label for="comment">comment:</label>
       <input type="comment" class="form-control" id="comment"
-             [(ngModel)]="income.comment" name="comment"
+             [(ngModel)]="expense.comment" name="comment"
              #email="ngModel">
     </label>
 
     <label class="checkbox-inline">
-      <button type="creste" class="btn btn-success" [disabled]="!userform.form.valid">Create</button>
+      <button type="creste" class="btn btn-success"[disabled]="!userform.form.valid">Create</button>
     </label>
   </form>
 </div>
-<app-report></app-report>
+<app-table></app-table>

@@ -1,7 +1,7 @@
 <div>
   <div class="form-group">
   </div>
-  <form (ngSubmit)="getall()" #userform="ngForm">
+  <form (ngSubmit)="getallexpense()" #userform="ngForm">
     <button type="refresh" class="btn btn-success" [disabled]="!userform.form.valid">Refresh</button>
 
     <table class="table">
@@ -14,14 +14,14 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let income of incomes">
-        <td>{{income.category}}</td>
+      <tr *ngFor="let expense of expenses">
+        <td>{{expense.category}}</td>
 
-        <td>{{income.amount}}</td>
+        <td>{{expense.amount}}</td>
 
-        <td> {{income.date}}</td>
+        <td> {{expense.date}}</td>
 
-        <td> {{income.comment}}</td>
+        <td> {{expense.comment}}</td>
 
       </tr>
 

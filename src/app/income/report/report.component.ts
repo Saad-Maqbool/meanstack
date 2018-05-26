@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IncomeService} from '../../Services/income.service';
 
 @Component({
@@ -9,11 +9,13 @@ import {IncomeService} from '../../Services/income.service';
 export class ReportComponent implements OnInit {
 
 
+  constructor(private controllerService: IncomeService) {
+  }
 
-  constructor(private controllerService: IncomeService) { }
-  incomes ;
+  incomes;
+
   ngOnInit() {
-this.getall();
+    this.getall();
   }
 
   getall() {

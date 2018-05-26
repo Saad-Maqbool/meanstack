@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService} from '../Services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UserService} from '../Services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,22 +12,25 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
+
   constructor(private controllerService: UserService, private router: Router) {
   }
 
   ngOnInit() {
   }
+
   signin() {
     this.controllerService.signin(this.user).subscribe(
       res => {
         console.log(res);
         localStorage.setItem('token', res['token']);
-         localStorage.setItem('user_id', res['userId']);
+        localStorage.setItem('user_id', res['userId']);
         this.goback();
       }
     );
   }
+
   goback() {
-    this.router.navigate(['/income']);
+    this.router.navigate(['/options']);
   }
 }

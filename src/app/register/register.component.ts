@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { UserService} from '../Services/user.service';
+import {UserService} from '../Services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
     email: '',
     password: ''
   };
+
   constructor(private http: HttpClient, private controllerService: UserService) {
 
   }
@@ -20,8 +21,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
 
   }
+
   signup() {
-    this.controllerService.signup( this.user).subscribe(
+    this.controllerService.signup(this.user).subscribe(
       res => {
         console.log(res);
         localStorage.setItem('token', res['token']);

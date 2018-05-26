@@ -10,8 +10,10 @@ mongoose.connect(process.env.MONGODB_URL);
 //mongoose.connect('mongodb://localhost/expense');
 require('./server/models/Users');
 require('./server/models/Income');
+require('./server/models/Expense');
 const userRouter = require('./server/routes/users');
 const incomeRouter = require('./server/routes/income');
+const expenseRouter = require('./server/routes/expense');
 
 const app = express();
 
@@ -23,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'dist/mean-app')));
 
 app.use('/users', userRouter);
 app.use('/income', incomeRouter);
+app.use('/expense', expenseRouter)
 app.use(logger('dev'));
 app.use(session({
   secret: 'Super duper secret'

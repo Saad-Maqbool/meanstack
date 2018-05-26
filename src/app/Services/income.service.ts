@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Token} from '@angular/compiler';
 
@@ -15,6 +15,7 @@ export class IncomeService {
   }
 
   getall() {
-    return this.http.get('/income/' + localStorage.getItem('userId') + '?token=' + localStorage.getItem('token'));
+    return this.http.get('/income/' + localStorage.getItem('user_id') + '?token=' + localStorage.getItem('token'));
   }
+
 }
