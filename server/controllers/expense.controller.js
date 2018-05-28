@@ -3,26 +3,19 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Expense = mongoose.model('Expense');
 
+getall((req, res, userid) => {
 
-function getall(req, res, userid) {
-
-  Expense.find({'userId': userid}).populate('userId').then((expense) => {
-
+  Expense.find({'userId': userid}).then((expense) => {
     if (!expense.length) {
       return res.status(404).send("no user found");
     }
     res.status(200).send(expense);
-
-
   })
     .catch((err) => {
       res.status(500).send(err.message);
     });
-
-
-}
-
-function create(req, res, category, amount, user_id, comment, date) {
+});
+create((req, res, category, amount, user_id, comment, date) => {
   Expense.create({
     category: category,
     amount: amount,
@@ -37,9 +30,9 @@ function create(req, res, category, amount, user_id, comment, date) {
     res.status(500).send(err.message);
   });
 
-}
+});
 
-function update(req, res, user_id, expense) {
+update((req, res, user_id, expense) => {
   console.log(expense);
   Expense
     .findOneAndUpdate(
@@ -52,9 +45,9 @@ function update(req, res, user_id, expense) {
   }).catch(err => {
     res.status(500).send(err.message);
   })
-}
+});
 
-function remove(req, res, user_id) {
+remove((req, res, user_id) => {
   Expense
     .findOneAndRemove({
       userId: user_id
@@ -64,10 +57,9 @@ function remove(req, res, user_id) {
     .catch(err => {
       res.status(500).send(err.message);
     })
-}
+});
 
 module.exports = {
-
   create: create,
   getall: getall,
   update: update,

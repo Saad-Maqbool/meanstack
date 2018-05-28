@@ -7,9 +7,7 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-
   signup(user) {
-
     return this.http.post('/users/register', user);
   }
 

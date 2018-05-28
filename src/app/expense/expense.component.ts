@@ -27,6 +27,7 @@ export class ExpenseComponent implements OnInit {
     this.controllerService.create(this.expense).subscribe(
       res => {
         console.log(res);
+        this.controllerService.getallexpense();
       }
     );
   }

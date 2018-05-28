@@ -6,14 +6,16 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL);
-//mongoose.connect('mongodb://localhost/expense');
+//mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect('mongodb://localhost/expense');
 require('./server/models/Users');
 require('./server/models/Income');
 require('./server/models/Expense');
+require('./server/models/Balance');
 const userRouter = require('./server/routes/users');
 const incomeRouter = require('./server/routes/income');
 const expenseRouter = require('./server/routes/expense');
+const balanceRouter = require('./server/routes/balance');
 
 const app = express();
 
@@ -25,7 +27,8 @@ app.use(express.static(path.join(__dirname, 'dist/mean-app')));
 
 app.use('/users', userRouter);
 app.use('/income', incomeRouter);
-app.use('/expense', expenseRouter)
+app.use('/expense', expenseRouter);
+app.use('/balance', balanceRouter);
 app.use(logger('dev'));
 app.use(session({
   secret: 'Super duper secret'
