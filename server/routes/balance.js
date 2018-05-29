@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const Balance = mongoose.model('Balance');
 const balanceController = require('../controllers/balance.controller');
 const config = require('../../config');
 
