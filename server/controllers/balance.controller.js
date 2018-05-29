@@ -5,3 +5,6 @@ const Income = mongoose.model('Income');
 const User = mongoose.model('User');
 const Expense = mongoose.model('Expense');
 
+const getall=(req, res, userid) => {
+
+};

@@ -27,14 +27,14 @@ app.use(express.static(path.join(__dirname, 'dist/mean-app')));
 app.use('/users', userRouter);
 app.use('/income', incomeRouter);
 app.use('/expense', expenseRouter);
-//app.use('/balance', balanceRouter);
+app.use('/balance', balanceRouter);
 app.use(logger('dev'));
 app.use(session({
-  secret: 'Super duper secret'
+    secret: 'Super duper secret'
 }));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/mean-app/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/mean-app/index.html'));
 });
 
 

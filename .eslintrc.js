@@ -1,19 +1,13 @@
 module.exports = {
-  "extends": "standard",
-
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
   "rules": {
-
-    "semi": ["error", "always"],
-    "no-duplicate-case": ["error", "always"],
-    "no-extra-semi": ["error", "always"],
-    "no-extra-parens": ["error", "always"],
-    "no-func-assign": ["error", "always"],
-    "no-irregular-whitespace": ["error", "always"],
-    "block-scoped-var": ["error", "always"],
-    "no-multi-spaces": ["error", "always"],
-    "strict": ["error", "always"],
-    "no-const-assign": ["error", "always"],
-    "no-var": ["error", "always"],
-    "quotes": ["error", "double"]
+    "brace-style": [2, "1tbs", { "allowSingleLine": false }],
+    "indent": [2,4, { "SwitchCase": 1 }],
+    "no-var":["error"]
   }
 };
