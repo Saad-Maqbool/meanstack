@@ -21,3 +21,4 @@ router.get('/:id', function (req, res) {
     balanceController.getall(req, res, req.params.id);
 
 });
+module.exports = router;

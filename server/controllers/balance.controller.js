@@ -8,3 +8,6 @@ const Expense = mongoose.model('Expense');
 const getall=(req, res, userid) => {
 
 };
+module.exports = {
+  getall: getall
+};
