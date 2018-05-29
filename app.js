@@ -11,7 +11,6 @@ mongoose.connect(process.env.MONGODB_URL);
 require('./server/models/Users');
 require('./server/models/Income');
 require('./server/models/Expense');
-require('./server/models/Balance');
 const userRouter = require('./server/routes/users');
 const incomeRouter = require('./server/routes/income');
 const expenseRouter = require('./server/routes/expense');
