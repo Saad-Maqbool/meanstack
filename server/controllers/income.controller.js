@@ -5,7 +5,7 @@ const Income = mongoose.model('Income');
 const User = mongoose.model('User');
 
 
-getall((req, res, userid) => {
+const getall=(req, res, userid) => {
 
   Income.find({'userId': userid}).then((income) => {
 
@@ -21,9 +21,9 @@ getall((req, res, userid) => {
     });
 
 
-});
+};
 
-create((req, res, category, amount, user_id, comment, date) => {
+const create=(req, res, category, amount, user_id, comment, date) => {
   Income.create({
     category: category,
     amount: amount,
@@ -38,9 +38,9 @@ create((req, res, category, amount, user_id, comment, date) => {
     res.status(500).send(err.message);
   });
 
-});
+};
 
-update((req, res, user_id, income) => {
+const update=(req, res, user_id, income) => {
   console.log(income);
   Income
     .findOneAndUpdate(
@@ -53,9 +53,9 @@ update((req, res, user_id, income) => {
   }).catch(err => {
     res.status(500).send(err.message);
   })
-});
+};
 
-remove((req, res, user_id) => {
+const remove=(req, res, user_id) => {
   Income
     .findOneAndRemove({
       userId: user_id
@@ -65,7 +65,7 @@ remove((req, res, user_id) => {
     .catch(err => {
       res.status(500).send(err.message);
     })
-});
+};
 
 module.exports = {
 

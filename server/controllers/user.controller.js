@@ -7,8 +7,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const config = require('../../config');
 
-
-create((req, res, username, email, password) => {
+const create = (req, res, username, email, password) => {
   const hashedPassword = bcrypt.hashSync(password, 8);
 
   User.create({
@@ -23,9 +22,9 @@ create((req, res, username, email, password) => {
   }).catch((err) => {
     return res.status(500).send(err.message)
   })
-});
+};
 
-login((req, res) => {
+const login=(req, res) => {
   User.findOne({email: req.body.email}).then((user) => {
     if (!user) return res.status(404).send('No user found.');
 
@@ -39,7 +38,7 @@ login((req, res) => {
   }).catch((err) => {
     res.status(500).send(err.message);
   });
-});
+};
 
 
 module.exports = {

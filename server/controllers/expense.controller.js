@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Expense = mongoose.model('Expense');
 
-getall((req, res, userid) => {
+const getall=(req, res, userid) => {
 
   Expense.find({'userId': userid}).then((expense) => {
     if (!expense.length) {
@@ -14,8 +14,8 @@ getall((req, res, userid) => {
     .catch((err) => {
       res.status(500).send(err.message);
     });
-});
-create((req, res, category, amount, user_id, comment, date) => {
+};
+const create=(req, res, category, amount, user_id, comment, date) => {
   Expense.create({
     category: category,
     amount: amount,
@@ -30,9 +30,9 @@ create((req, res, category, amount, user_id, comment, date) => {
     res.status(500).send(err.message);
   });
 
-});
+};
 
-update((req, res, user_id, expense) => {
+const update=(req, res, user_id, expense) => {
   console.log(expense);
   Expense
     .findOneAndUpdate(
@@ -45,9 +45,9 @@ update((req, res, user_id, expense) => {
   }).catch(err => {
     res.status(500).send(err.message);
   })
-});
+};
 
-remove((req, res, user_id) => {
+const remove=(req, res, user_id) => {
   Expense
     .findOneAndRemove({
       userId: user_id
@@ -57,7 +57,7 @@ remove((req, res, user_id) => {
     .catch(err => {
       res.status(500).send(err.message);
     })
-});
+};
 
 module.exports = {
   create: create,
