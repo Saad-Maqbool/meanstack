@@ -1,6 +1,40 @@
-<nav>
-  <input type="button" value="expense" [routerLink]="['../expense']" routerLinkActive="active" class="btn">
-  <input type="button" value="income" [routerLink]="['../income']" routerLinkActive="active" class="btn">
-  <input type="button" value="balance" [routerLink]="['../balance']" routerLinkActive="active" class="btn">
+<!--<nav>-->
+  <!--<input type="button" value="expense" [routerLink]="['../expense']" routerLinkActive="active" class="btn">-->
+  <!--<input type="button" value="income" [routerLink]="['../income']" routerLinkActive="active" class="btn">-->
+  <!--<input type="button" value="balance" [routerLink]="['../balance']" routerLinkActive="active" class="btn">-->
+<!--</nav>-->
+
+  <!--<ul class="nav nav-pills nav-fill">-->
+    <!--<li class="nav-item">-->
+      <!--<a class="expense" [routerLink]="['../expense']">expense</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="income" [routerLink]="['../income']">income</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="balance" [routerLink]="['../balance']">balance</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+
+
+<!--<nav class="navbar navbar-dark bg-dark">-->
+    <!--<form class="form-inline">-->
+      <!--<button class="btn btn-outline-success" type="button"[routerLink]="['../expense']">expense</button>-->
+      <!--<button class="btn btn-outline-success" type="button"[routerLink]="['../income']">income</button>-->
+      <!--<button class="btn btn-outline-success" type="button"[routerLink]="['../balance']">balance</button>-->
+    <!--</form>-->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['../options']">Expenseview</a>
+    </div>
+    <ul class="nav navbar-nav">
+
+      <li><a class="active"[routerLink]="['../expense']">Expense</a></li>
+      <li><a [routerLink]="['../income']">Income</a></li>
+      <li><a [routerLink]="['../balance']">Balance</a></li>
+    </ul>
+  </div>
 </nav>
 <router-outlet>

@@ -20,6 +20,7 @@ import {ExpenseComponent} from './expense/expense.component';
 import {TableComponent} from './expense/table/table.component';
 import {BalanceComponent} from './balance/balance.component';
 import {ExpenseService} from './Services/expense.service';
+import {BalanceService} from './Services/balance.service';
 
 
 @NgModule({
@@ -71,7 +72,7 @@ import {ExpenseService} from './Services/expense.service';
       }
     ])
   ],
-  providers: [UserService, IncomeService, ExpenseService],
+  providers: [UserService, IncomeService, ExpenseService, BalanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

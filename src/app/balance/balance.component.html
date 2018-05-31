@@ -1,1 +1,29 @@
 <app-options></app-options>
+<div>
+  <div class="form-group">
+  </div>
+  <form (ngSubmit)="getbalance()" #userform="ngForm">
+    <button type="refresh" class="btn btn-success" [disabled]="!userform.form.valid">Refresh</button>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Income</th>
+    <th>Expense</th>
+    <th>Balance</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr >
+    <td>{{balances.income[0].total}}</td>
+
+    <td>{{balances.expense[0].total}}</td>
+
+    <td> {{balances.balance}}</td>
+
+
+
+  </tbody>
+</table>
+  </form>
+</div>

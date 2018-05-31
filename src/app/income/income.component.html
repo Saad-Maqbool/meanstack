@@ -1,36 +1,118 @@
-<app-options></app-options>
-<div>
-  <h2>Income</h2>
 
-  <form (ngSubmit)="create()" #userform="ngForm">
-    <label class="checkbox-inline">
-      <label for="category">category:</label>
-      <input type="email" class="form-control" id="category"
+<!--<div>-->
+  <!--<h2>Income</h2>-->
+
+  <!--<form (ngSubmit)="create()" #userform="ngForm">-->
+    <!--<label class="checkbox-inline">-->
+      <!--<label for="category">category:</label>-->
+      <!--<input type="email" class="form-control" id="category"-->
+             <!--[(ngModel)]="income.category" name="category"-->
+             <!--#email="ngModel">-->
+    <!--</label>-->
+    <!--<label class="checkbox-inline">-->
+      <!--<label for="date">date:</label>-->
+      <!--<input type="date" class="form-control" id="date"-->
+             <!--[(ngModel)]="income.date" name="date"-->
+             <!--#email="ngModel">-->
+    <!--</label>-->
+    <!--<label class="checkbox-inline">-->
+      <!--<label for="amount">amount:</label>-->
+      <!--<input type="amount" class="form-control" id="amount"-->
+             <!--[(ngModel)]="income.amount" name="amount"-->
+             <!--#email="ngModel">-->
+    <!--</label>-->
+    <!--<label class="checkbox-inline">-->
+      <!--<label for="comment">comment:</label>-->
+      <!--<input type="comment" class="form-control" id="comment"-->
+             <!--[(ngModel)]="income.comment" name="comment"-->
+             <!--#email="ngModel">-->
+    <!--</label>-->
+
+    <!--<label class="checkbox-inline">-->
+      <!--<button type="creste" class="btn btn-success" [disabled]="!userform.form.valid">Create</button>-->
+    <!--</label>-->
+  <!--</form>-->
+<!--</div>-->
+
+<!--<form (ngSubmit)="create()" #userform="ngForm">-->
+  <!--<div class="form-group row">-->
+    <!--<div class="col-xs-2">-->
+      <!--<label for="category">category-->
+      <!--<input class="form-control" id="category" type="text">-->
+      <!--[(ngModel)]="income.category" name="category"-->
+      <!--#email="ngModel">-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div class="col-xs-2">-->
+      <!--<label for="amount">amount-->
+      <!--<input class="form-control" id="amount" type="text">-->
+      <!--[(ngModel)]="income.amount" name="amount"-->
+      <!--#email="ngModel">-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div class="col-xs-2">-->
+      <!--<label for="date">date-->
+      <!--<input class="form-control" id="date" type="date">-->
+      <!--[(ngModel)]="income.date" name="date"-->
+      <!--#email="ngModel">-->
+      <!--</label>-->
+    <!--</div>-->
+    <!--<div class="col-xs-2">-->
+      <!--<label for="comment">comment-->
+      <!--<input class="form-control" id="comment" type="comment">-->
+      <!--[(ngModel)]="income.comment" name="comment"-->
+      <!--#email="ngModel">-->
+      <!--</label>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-2">-->
+      <!--<button type="creste" class="btn btn-success" [disabled]="!userform.form.valid">Create</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</form>-->
+<app-options></app-options>
+<div class="container-fluid">
+  <h2>Income</h2>
+  <div class="form-inline">
+    <form (ngSubmit)="create()" #userform="ngForm">
+    <div class="form-group">
+      <label class="checkbox-inline">
+      <label for="category">Category:</label>
+      <input type="text" class="form-control" id="category"
              [(ngModel)]="income.category" name="category"
              #email="ngModel">
-    </label>
-    <label class="checkbox-inline">
-      <label for="date">date:</label>
-      <input type="date" class="form-control" id="date"
-             [(ngModel)]="income.date" name="date"
-             #email="ngModel">
-    </label>
-    <label class="checkbox-inline">
-      <label for="amount">amount:</label>
-      <input type="amount" class="form-control" id="amount"
-             [(ngModel)]="income.amount" name="amount"
-             #email="ngModel">
-    </label>
-    <label class="checkbox-inline">
-      <label for="comment">comment:</label>
-      <input type="comment" class="form-control" id="comment"
-             [(ngModel)]="income.comment" name="comment"
-             #email="ngModel">
-    </label>
-
-    <label class="checkbox-inline">
-      <button type="creste" class="btn btn-success" [disabled]="!userform.form.valid">Create</button>
-    </label>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="checkbox-inline">
+        <label for="amount">Amount:</label>
+        <input type="text" class="form-control" id="amount"
+               [(ngModel)]="income.amount" name="amount"
+               #email="ngModel">
+      </label>
+    </div>
+      <div class="form-group">
+        <label class="checkbox-inline">
+          <label for="date">Date:</label>
+          <input type="date" class="form-control" id="date"
+                 [(ngModel)]="income.date" name="date"
+                 #email="ngModel">
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-inline">
+          <label for="comment">Comment:</label>
+          <input type="text" class="form-control" id="comment"
+                 [(ngModel)]="income.comment" name="comment"
+                 #email="ngModel">
+        </label>
+      </div>
+      <label class="checkbox-inline">
+        <button type="creste" class="btn btn-success"[disabled]="!userform.form.valid">Create</button>
+      </label>
   </form>
+  </div>
 </div>
+
 <app-report></app-report>
+
