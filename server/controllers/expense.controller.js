@@ -55,7 +55,7 @@ const remove=(req, res, user_id) => {
             res.status(200).send(expense);
         })
         .catch(err => {
-          res.status(500).send(err.message);
+            res.status(500).send(err.message);
         })
 };
 

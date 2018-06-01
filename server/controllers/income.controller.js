@@ -16,9 +16,9 @@ const getall=(req, res, userid) => {
 
 
     })
-      .catch((err) => {
-        res.status(500).send(err.message);
-      });
+        .catch((err) => {
+            res.status(500).send(err.message);
+        });
 
 
 };

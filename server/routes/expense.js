@@ -8,29 +8,29 @@ const config = require('../../config');
 
 router.use('/', function (req, res, next) {
 
-  jwt.verify(req.query.token, config.secret, function (err, decode) {
-    if (err) {
-      res.status(401).json({
-        title: 'Not Authenticated',
-        error: err
-      });
-    }
-    next();
+    jwt.verify(req.query.token, config.secret, function (err, decode) {
+        if (err) {
+            res.status(401).json({
+                title: 'Not Authenticated',
+                error: err
+            });
+        }
+        next();
 
-  })
+    })
 });
 router.get('/:id', function (req, res) {
-  expenseController.getall(req, res, req.params.id);
+    expenseController.getall(req, res, req.params.id);
 
 });
 router.post('/', function (req, res) {
-  expenseController.create(req, res, req.body.category, req.body.amount, req.body.user_id, req.body.comment, req.body.date);
+    expenseController.create(req, res, req.body.category, req.body.amount, req.body.user_id, req.body.comment, req.body.date);
 
 });
 router.put('/:id', function (req, res) {
-  expenseController.update(req, res, req.params.user_id, req.body)
+    expenseController.update(req, res, req.params.user_id, req.body)
 });
 router.delete('/', function (req, res) {
-  expenseController.remove(req, res, req.body.user_id);
+    expenseController.remove(req, res, req.body.user_id);
 });
 module.exports = router;
