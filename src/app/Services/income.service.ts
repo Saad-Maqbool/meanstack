@@ -15,7 +15,7 @@ export class IncomeService {
   }
 
   getall() {
-    return this.http.get('/income/' + localStorage.getItem('user_id') + '?token=' + localStorage.getItem('token'));
+    return this.http.get('/income/' + localStorage.getItem('user_id'));
   }
 
 }

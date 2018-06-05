@@ -28,6 +28,8 @@
     "@angular/router": "^6.0.2",
     "angular-material-data-table": "^0.10.10",
     "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.3",
     "core-js": "^2.5.4",
@@ -41,6 +43,8 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.0.17",
     "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "revalidator": "^0.3.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

@@ -26,7 +26,6 @@ export class RegisterComponent implements OnInit {
     this.controllerService.signup(this.user).subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token', res['token']);
       }
     );
   }
