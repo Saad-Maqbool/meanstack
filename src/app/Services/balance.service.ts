@@ -8,6 +8,6 @@ export class BalanceService {
 
   constructor(private http: HttpClient) { }
   getbalance() {
-    return this.http.get('/balance/' + localStorage.getItem('user_id') + '?token=' + localStorage.getItem('token'));
+    return this.http.get('/balance/' + localStorage.getItem('user_id'));
   }
 }

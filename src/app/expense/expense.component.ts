@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {Router} from '@angular/router';
 import {ExpenseService} from '../Services/expense.service';
+import {TableComponent} from './table/table.component';
 
 @Component({
   selector: 'app-expense',
@@ -17,7 +18,7 @@ export class ExpenseComponent implements OnInit {
     user_id: localStorage.getItem('user_id')
   };
 
-  constructor(private controllerService: ExpenseService, private router: Router) {
+  constructor(private controllerService: ExpenseService, private router: Router,) {
   }
 
   ngOnInit() {

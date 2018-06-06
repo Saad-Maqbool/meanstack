@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     this.controllerService.signin(this.user).subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token', res['token']);
         localStorage.setItem('user_id', res['userId']);
         this.goback();
       }

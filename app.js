@@ -2,16 +2,18 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL);
-//mongoose.connect('mongodb://localhost/expense');
+//mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect('mongodb://localhost/expense');
 require('./server/models/Users');
 require('./server/models/Income');
 require('./server/models/Expense');
 const userRouter = require('./server/routes/users');
+const authenticate = require('./server/routes/authenticate')(passport);
 const incomeRouter = require('./server/routes/income');
 const expenseRouter = require('./server/routes/expense');
 const balanceRouter = require('./server/routes/balance');
@@ -23,8 +25,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.use(express.static(path.join(__dirname, 'dist/mean-app')));
-
+app.use(passport.initialize());
+app.use(passport.session());
+const initPassport = require('./server/routes/passport-init');
+initPassport(passport);
 app.use('/users', userRouter);
+app.use('/auth', authenticate);
 app.use('/income', incomeRouter);
 app.use('/expense', expenseRouter);
 app.use('/balance', balanceRouter);

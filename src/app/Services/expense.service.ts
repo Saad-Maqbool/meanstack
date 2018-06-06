@@ -14,7 +14,7 @@ export class ExpenseService {
   }
 
   getallexpense() {
-    return this.http.get('/expense/' + localStorage.getItem('user_id') + '?token=' + localStorage.getItem('token'));
+    return this.http.get('/expense/' + localStorage.getItem('user_id'));
   }
 }
 

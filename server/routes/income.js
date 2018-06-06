@@ -6,18 +6,6 @@ const Income = mongoose.model('Income');
 const incomeController = require('../controllers/income.controller');
 const config = require('../../config');
 
-router.use('/', function (req, res, next) {
-
-    jwt.verify(req.query.token, config.secret, function (err, decode) {
-        if (err) {
-            res.status(401).json({
-                title: 'Not Authenticated',
-                error: err
-            });
-        }
-        next();
-    })
-});
 router.get('/:id', function (req, res) {
     incomeController.getall(req, res, req.params.id);
 
