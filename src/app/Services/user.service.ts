@@ -8,11 +8,11 @@ export class UserService {
   }
 
   signup(user) {
-    return this.http.post('/users/register', user);
+    return this.http.post('/auth/signup', user);
   }
 
   signin(user) {
-    return this.http.post('/users/login', user);
+    return this.http.post('/auth/login', user);
   }
 }
 

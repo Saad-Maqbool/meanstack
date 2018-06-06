@@ -9,17 +9,17 @@ const config = require('../../config');
 
 
 router.get('/:id', function (req, res) {
-  expenseController.getall(req, res, req.params.id);
+    expenseController.getall(req, res, req.params.id);
 
 });
 router.post('/', function (req, res) {
-  expenseController.create(req, res, req.body.category, req.body.amount, req.body.user_id, req.body.comment, req.body.date);
+    expenseController.create(req, res, req.body.category, req.body.amount, req.body.user_id, req.body.comment, req.body.date);
 
 });
 router.put('/:id', function (req, res) {
-  expenseController.update(req, res, req.params.user_id, req.body)
+    expenseController.update(req, res, req.params.user_id, req.body)
 });
 router.delete('/', function (req, res) {
-  expenseController.remove(req, res, req.body.user_id);
+    expenseController.remove(req, res, req.body.user_id);
 });
 module.exports = router;

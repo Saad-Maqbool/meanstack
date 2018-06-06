@@ -32,17 +32,16 @@ module.exports = function (passport) {
           console.log('User Not Found with username ' + username);
           return done(null, false);
         }
+        if (isValidPassword(user)) {
+
+          return done(null, user);
+        } else {
+          console.log('Invalid password ' + username);
+          return done(null, false)
+        }
       }).catch((err) => {
         return done(err, false)
-      })
-      if (isValidPassword(user)) {
-
-        return done(null, user);
-      }
-      else {
-        console.log('Invalid password ' + username);
-        return done(null, false)
-      }
+      });
     }
   ));
 
@@ -55,31 +54,27 @@ module.exports = function (passport) {
           console.log('User already exists with username: ' + username);
           return done(null, false);
         } else {
-          var newUser = new User();
+          let newUser = new User();
           newUser.email = email;
           newUser.username = username;
           newUser.password = createHash(password);
-          newUser.save(function (err) {
-            if (err) {
-              console.log('Error in Saving user: ' + err);
-              throw err;
-            }
+          newUser.save( ()=>{
             console.log(newUser.username + ' Registration successful');
-            return done(null, newUser);
+            res.status(200).send(newUser);
           });
         }
       }).catch((err) => {
         console.log('Error in SignUp: ' + err);
-        return done(err);
+
       })
     })
   );
 
-  var isValidPassword = function (user, password) {
+  const isValidPassword = (user, password) => {
     return bCrypt.compareSync(password, user.password);
   };
 
-  var createHash = function (password) {
+  const createHash = (password) => {
     return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
   }
-}
+};
